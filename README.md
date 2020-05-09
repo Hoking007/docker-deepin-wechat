@@ -28,6 +28,10 @@
 /home/$(whoami)/WeChatFiles
 ```
 
+## 4, Docker hub images
+
+<https://hub.docker.com/repository/docker/hoking007/wechat>
+
 ## 感谢
 
 <https://github.com/ygcaicn/ubuntu_qq>
