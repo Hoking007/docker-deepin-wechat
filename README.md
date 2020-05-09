@@ -1,28 +1,32 @@
 # docker-deepin-wechat
 
-基于Docker封装的Deepin-WeChat微信。
+基于 Docker 封装的 Deepin-WeChat 微信，开箱即用。
 
-在ygcaicn以及bestwu封装的基础上，解决高分屏显示问题。
+在 ygcaicn 以及 bestwu 封装的基础上，解决高分屏显示问题。
 
-默认DPI=120，如果有需要可在 “wechat.sh” 中修改，例如 “140”：
+默认 DPI=120，如果有需要可在 “wechat.sh” 中修改，例如 “140”：
 
 ```sh
 -e DPI=140
 ```
 
-## 1, 构建Docker容器，只需要构建一次
+## 1, 构建 Docker 镜像，只需要构建一次
 
 ```sh
 ./build.sh
 ```
 
-## 2, 自动生成容器，以及.desktop
+## 2, 构建并启动 Docker 容器
 
 ```sh
 ./wechat.sh
 ```
 
-快捷方式将自动生成，并放置在 "/home/$(whoami)/.local/share/applications/Wechat.desktop"
+## 3, 用户数据
+
+```sh
+/home/$(whoami)/WeChatFiles
+```
 
 ## 感谢
 
