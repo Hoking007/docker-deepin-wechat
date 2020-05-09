@@ -2,7 +2,7 @@
 
 基于Docker封装的Deepin-WeChat微信。
 
-在ygcaicn以及bestwu封装的基础上，解决高分屏现实问题。
+在ygcaicn以及bestwu封装的基础上，解决高分屏显示问题。
 
 默认DPI=120，如果有需要可在 “wechat.sh” 中修改，例如 “140”：
 
