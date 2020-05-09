@@ -64,13 +64,13 @@ remove(){
 
 removei(){
   clean
-  imgs=$(docker images | awk '$1 ~ /hoking\/wechat/ {print $3}')
+  imgs=$(docker images | awk '$1 ~ /hoking007\/wechat/ {print $3}')
   [[ -n $imgs ]] && docker rmi $imgs
   return 0
 }
 
 clean(){
-  container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /hoking\/wechat/ {print $1}')
+  container_ids=$(docker ps -a | awk  'NR!=1 && $2 ~ /hoking007\/wechat/ {print $1}')
   if [[ -n "$container_ids" ]]; then
     docker container rm -f $container_ids
   fi
@@ -103,16 +103,16 @@ startContainer(){
     -e GID=`id -g` \
     -e UID=`id -u` \
     -e DPI=120 \
-    hoking/wechat
+    hoking007/wechat
   return 0
 }
 
 start(){
-  container_id=$(docker ps -a | grep script_wechat | awk  '$2 ~ /hoking\/wechat/ {print $1}')
+  container_id=$(docker ps -a | grep script_wechat | awk  '$2 ~ /hoking007\/wechat/ {print $1}')
   if [[ -z "$container_id" ]]; then
     startContainer
   else
-    container_stat=$(docker ps | grep script_wechat | awk  '$2 ~ /hoking\/wechat/ {print $1}')
+    container_stat=$(docker ps | grep script_wechat | awk  '$2 ~ /hoking007\/wechat/ {print $1}')
     if [ -z "$container_stat" ]; then
       docker container start ${container_id}
     else

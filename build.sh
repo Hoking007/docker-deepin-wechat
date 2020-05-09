@@ -1,3 +1,3 @@
 #!/usr/bin/env bash 
 
-docker build -t hoking/wechat .
+docker build -t hoking007/wechat .
