@@ -7,9 +7,9 @@ install(){
   fi
   [ -n ~/.local/bin/ ] && mkdir -p ~/.local/bin/
   p=$(grep ~/.local/bin: ~/.bashrc)
-  [ -n $p ] && echo "export PATH=\"$HOME/.local/bin:\$PATH\"" >> ~/.bashrc && source ~/.bashrc
+  [ -n "$p" ] && echo "export PATH=\"$HOME/.local/bin:\$PATH\"" >> ~/.bashrc
   p=$(grep ~/.local/bin: ~/.zshrc)
-  [ -n $p ] && echo "export PATH=\"$HOME/.local/bin:\$PATH\"" >> ~/.zshrc && source ~/.zshrc
+  [ -n "$p" ] && echo "export PATH=\"$HOME/.local/bin:\$PATH\"" >> ~/.zshrc
   [ -n ~/.local/share/icons/hicolor/256x256/apps ] && mkdir -p ~/.local/share/icons/hicolor/256x256/apps
 
   if ! [ -x ~/.local/bin/wechat.sh ]; then
@@ -65,7 +65,7 @@ remove(){
 removei(){
   clean
   imgs=$(docker images | awk '$1 ~ /hoking007\/wechat/ {print $3}')
-  [[ -n $imgs ]] && docker rmi $imgs
+  [[ -n "$imgs" ]] && docker rmi $imgs
   return 0
 }
 
